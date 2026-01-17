@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-  static const LinearGradient krimaryGradient = LinearGradient(
-    colors: [Color(0xFF2B7FFE), Color(0xFF165FFD)],
+  static const LinearGradient kPrimaryGradient = LinearGradient(
+    colors: [
+      Color.fromARGB(255, 65, 128, 223),
+      Color.fromARGB(255, 2, 48, 147),
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const LinearGradient kSecondaryGradient = LinearGradient(
+    colors: [
+      Color.fromARGB(255, 241, 247, 255),
+      Color.fromARGB(255, 172, 194, 215),
+    ],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

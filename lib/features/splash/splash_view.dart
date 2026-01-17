@@ -29,7 +29,7 @@ class _SplashViewState extends State<SplashView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(gradient: AppColors.krimaryGradient),
+        decoration: BoxDecoration(gradient: AppColors.kPrimaryGradient),
         child: const SplashViewBody(),
       ),
     );

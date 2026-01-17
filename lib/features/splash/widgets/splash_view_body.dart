@@ -36,7 +36,7 @@ class SplashViewBody extends StatelessWidget {
 
         const Spacer(),
         Text(
-          'Transform image into motion UI',
+          'Transform images into motion UI',
           style: AppStyles.bold9(context).copyWith(color: Colors.white70),
           textAlign: TextAlign.center,
         ),
