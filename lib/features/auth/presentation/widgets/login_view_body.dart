@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image2vid/core/utils/app_colors.dart';
 import 'package:image2vid/core/utils/app_images.dart';
 import 'package:image2vid/core/utils/app_styles.dart';
+import 'package:image2vid/features/auth/presentation/widgets/login_form_card.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -28,6 +29,7 @@ class LoginViewBody extends StatelessWidget {
             context,
           ).copyWith(color: AppColors.kSecondaryColor),
         ),
+        LoginFormCard(),
         Spacer(),
       ],
     );
