@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image2vid/core/utils/app_colors.dart';
 import 'package:image2vid/core/utils/app_styles.dart';
+import 'package:image2vid/features/home/presentation/widgets/home_title_section.dart';
 
 class HomeBodyContent extends StatelessWidget {
   const HomeBodyContent({super.key});
@@ -12,17 +13,13 @@ class HomeBodyContent extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          const Gap(20),
-          // Title section
-          TitleSection(),
           const Gap(30),
-          // Upload card
+          const TitleSection(),
+          const Gap(30),
           UploadImageCard(),
           const Gap(16),
-          // Generate button
           GenerateVideoButton(),
           const Gap(16),
-          // Action buttons row
           ActionButtonsRow(),
           const Gap(20),
         ],
@@ -32,33 +29,6 @@ class HomeBodyContent extends StatelessWidget {
 }
 
 // title_section.dart
-
-class TitleSection extends StatelessWidget {
-  const TitleSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Create Amazing Videos',
-          textAlign: TextAlign.center,
-          style: AppStyles.bold17(
-            context,
-          ).copyWith(fontSize: 22, color: const Color(0xFF1F2937)),
-        ),
-        const Gap(8),
-        Text(
-          'Upload an image and transform it into a\nstunning video with AI',
-          textAlign: TextAlign.center,
-          style: AppStyles.regular13(
-            context,
-          ).copyWith(color: AppColors.kSecondaryColor),
-        ),
-      ],
-    );
-  }
-}
 
 // upload_image_card.dart
 
