@@ -47,7 +47,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
               ),
               prefixIcon: Icon(
                 widget.icon,
-                color: AppColors.kThirdColor,
+                color: AppColors.kTextColor,
                 size: 20,
               ),
               suffixIcon: IconButton(

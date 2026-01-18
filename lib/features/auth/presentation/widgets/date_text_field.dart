@@ -21,7 +21,7 @@ class DateTextField extends StatelessWidget {
         ).copyWith(color: const Color(0xFF9CA3AF), fontSize: 14),
         prefixIcon: Icon(
           Icons.calendar_today_outlined,
-          color: AppColors.kThirdColor,
+          color: AppColors.kTextColor,
           size: 20,
         ),
         border: InputBorder.none,

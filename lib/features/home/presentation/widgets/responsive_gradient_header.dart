@@ -24,7 +24,7 @@ class ResponsiveGradientHeader extends StatelessWidget {
             ),
           ),
           child: IntrinsicHeight(
-            child: Column(children: [child, const SizedBox(height: 20)]),
+            child: Column(children: [child, const SizedBox(height: 28)]),
           ),
         ),
       ),

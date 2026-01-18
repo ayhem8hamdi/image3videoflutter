@@ -39,7 +39,7 @@ class CustomTextField extends StatelessWidget {
               hintStyle: AppStyles.regular13(
                 context,
               ).copyWith(color: const Color(0xFF9CA3AF), fontSize: 14),
-              prefixIcon: Icon(icon, color: AppColors.kThirdColor, size: 20),
+              prefixIcon: Icon(icon, color: AppColors.kTextColor, size: 20),
               border: InputBorder.none,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 16,
