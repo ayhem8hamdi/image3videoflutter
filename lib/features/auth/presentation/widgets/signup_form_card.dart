@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:image2vid/core/utils/app_colors.dart';
 import 'package:image2vid/core/utils/app_styles.dart';
 import 'package:image2vid/features/auth/presentation/widgets/already_have_account_widget.dart';
 import 'package:image2vid/features/auth/presentation/widgets/custom_form_button.dart';
@@ -9,6 +8,7 @@ import 'package:image2vid/features/auth/presentation/widgets/custom_text_field.d
 import 'package:image2vid/features/auth/presentation/widgets/date_text_field.dart';
 import 'package:image2vid/features/auth/presentation/widgets/form_container.dart';
 import 'package:image2vid/features/auth/presentation/widgets/phone_text_field.dart';
+import 'package:image2vid/features/home/presentation/home_view.dart';
 
 class SignUpFormCard extends StatefulWidget {
   const SignUpFormCard({super.key});
@@ -34,6 +34,9 @@ class _SignUpFormCardState extends State<SignUpFormCard> {
 
   void _handleSignUp() {
     // i will trigger signup cubit from here
+    Navigator.of(
+      context,
+    ).pushReplacement(MaterialPageRoute(builder: (_) => const HomeScreen()));
   }
 
   Future<void> _selectDate(BuildContext context) async {
