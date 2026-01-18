@@ -53,7 +53,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
               suffixIcon: IconButton(
                 icon: Icon(
                   _obscureText ? Icons.visibility_off : Icons.visibility,
-                  color: AppColors.kSecondaryColor,
+                  color: AppColors.kTextColor,
                   size: 20,
                 ),
                 onPressed: () {
