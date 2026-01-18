@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:image2vid/core/utils/app_colors.dart';
 import 'package:image2vid/core/utils/app_styles.dart';
 import 'package:image2vid/features/home/presentation/widgets/home_title_section.dart';
+import 'package:image2vid/features/home/presentation/widgets/upload_image_card.dart';
 
 class HomeBodyContent extends StatelessWidget {
   const HomeBodyContent({super.key});
@@ -15,7 +16,7 @@ class HomeBodyContent extends StatelessWidget {
         children: [
           const Gap(30),
           const TitleSection(),
-          const Gap(30),
+          const Gap(26),
           UploadImageCard(),
           const Gap(16),
           GenerateVideoButton(),
@@ -27,77 +28,6 @@ class HomeBodyContent extends StatelessWidget {
     );
   }
 }
-
-// title_section.dart
-
-// upload_image_card.dart
-
-class UploadImageCard extends StatelessWidget {
-  const UploadImageCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          // Upload icon
-          Container(
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
-              color: AppColors.kSecondaryColor,
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(
-              Icons.upload_outlined,
-              color: Colors.white,
-              size: 32,
-            ),
-          ),
-          const Gap(16),
-          // Upload text
-          Text(
-            'Upload an Image',
-            style: AppStyles.bold17(
-              context,
-            ).copyWith(color: AppColors.kSecondaryColor, fontSize: 16),
-          ),
-          const Gap(8),
-          // Drag & drop text
-          Text(
-            'Drag & drop or click to browse',
-            style: AppStyles.regular13(
-              context,
-            ).copyWith(color: AppColors.kSecondaryColor),
-          ),
-          const Gap(4),
-          // Supported formats
-          Text(
-            'Supports JPG, PNG, GIF',
-            style: AppStyles.regular11(
-              context,
-            ).copyWith(color: Colors.grey[500], fontSize: 11),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// generate_video_button.dart
 
 class GenerateVideoButton extends StatelessWidget {
   const GenerateVideoButton({super.key});
