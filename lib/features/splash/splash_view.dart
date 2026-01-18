@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image2vid/core/utils/app_colors.dart';
-import 'package:image2vid/features/auth/login_view.dart';
+import 'package:image2vid/features/auth/presentation/login_view.dart';
 import 'package:image2vid/features/splash/widgets/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
