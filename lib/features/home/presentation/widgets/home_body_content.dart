@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image2vid/core/utils/app_colors.dart';
+import 'package:image2vid/core/utils/app_images.dart';
 import 'package:image2vid/core/utils/app_styles.dart';
 import 'package:image2vid/features/home/presentation/widgets/home_title_section.dart';
+import 'package:image2vid/features/home/presentation/widgets/inactive_generate_video_button.dart';
 import 'package:image2vid/features/home/presentation/widgets/upload_image_card.dart';
 
 class HomeBodyContent extends StatelessWidget {
@@ -18,52 +20,12 @@ class HomeBodyContent extends StatelessWidget {
           const TitleSection(),
           const Gap(26),
           UploadImageCard(),
-          const Gap(16),
-          GenerateVideoButton(),
-          const Gap(16),
+          const Gap(23),
+          const InactiveGenerateVideoButton(),
+          const Gap(22),
           ActionButtonsRow(),
           const Gap(20),
         ],
-      ),
-    );
-  }
-}
-
-class GenerateVideoButton extends StatelessWidget {
-  const GenerateVideoButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 54,
-      child: ElevatedButton(
-        onPressed: () {
-          // TODO: Trigger video generation
-        },
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.kSecondaryColor.withOpacity(0.3),
-          foregroundColor: Colors.white,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.auto_awesome, size: 20),
-            const SizedBox(width: 8),
-            Text(
-              'Generate Video from Image',
-              style: AppStyles.regular13(context).copyWith(
-                color: Colors.white,
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
@@ -78,7 +40,7 @@ class ActionButtonsRow extends StatelessWidget {
       children: [
         Expanded(
           child: ActionButton(
-            icon: Icons.upload_outlined,
+            icon: AppImages.uploadImageIcon,
             label: 'Upload',
             onTap: () {
               // TODO: Handle upload
@@ -88,7 +50,7 @@ class ActionButtonsRow extends StatelessWidget {
         const Gap(12),
         Expanded(
           child: ActionButton(
-            icon: Icons.auto_awesome,
+            icon: AppImages.generateImageIcon,
             label: 'Generate',
             onTap: () {
               // TODO: Handle generate
@@ -98,7 +60,7 @@ class ActionButtonsRow extends StatelessWidget {
         const Gap(12),
         Expanded(
           child: ActionButton(
-            icon: Icons.download_outlined,
+            icon: AppImages.downloadImageIcon,
             label: 'Download',
             onTap: () {
               // TODO: Handle download
@@ -111,7 +73,7 @@ class ActionButtonsRow extends StatelessWidget {
 }
 
 class ActionButton extends StatelessWidget {
-  final IconData icon;
+  final String icon;
   final String label;
   final VoidCallback onTap;
 
@@ -141,7 +103,7 @@ class ActionButton extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Icon(icon, color: AppColors.kSecondaryColor, size: 24),
+            Image.asset(icon, width: 36, height: 36),
             const Gap(6),
             Text(
               label,
