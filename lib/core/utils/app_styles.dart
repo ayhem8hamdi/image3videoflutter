@@ -45,7 +45,7 @@ abstract class AppStyles {
       _baseCairo(context).copyWith(
         fontSize: responsiveFontSize(context, fontSize: 10),
         fontWeight: FontWeight.w400,
-        color: Colors.black,
+        color: AppColors.kSecondaryColor,
       );
 
   static TextStyle semiBold10(BuildContext context) =>
@@ -73,7 +73,7 @@ abstract class AppStyles {
       _baseCairo(context).copyWith(
         fontSize: responsiveFontSize(context, fontSize: 11),
         fontWeight: FontWeight.w400,
-        color: Colors.black,
+        color: AppColors.kPrimaryColor,
       );
 
   static TextStyle semiBold11(BuildContext context) =>
@@ -114,7 +114,7 @@ abstract class AppStyles {
   static TextStyle bold12(BuildContext context) => _baseCairo(context).copyWith(
     fontSize: responsiveFontSize(context, fontSize: 12),
     fontWeight: FontWeight.w700,
-    color: Colors.black,
+    color: AppColors.kTextColor,
   );
 
   // FontSize 13px

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:image2vid/core/utils/app_colors.dart';
+import 'package:image2vid/core/utils/app_styles.dart';
 
 class CustomTextField extends StatelessWidget {
   final String label;
@@ -21,14 +23,7 @@ class CustomTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-            color: Color(0xFF374151),
-          ),
-        ),
+        Text(label, style: AppStyles.regular11(context)),
         const SizedBox(height: 8),
         Container(
           decoration: BoxDecoration(
@@ -41,15 +36,21 @@ class CustomTextField extends StatelessWidget {
             keyboardType: keyboardType,
             decoration: InputDecoration(
               hintText: placeholder,
-              hintStyle: const TextStyle(
-                color: Color(0xFF9CA3AF),
-                fontSize: 14,
-              ),
-              prefixIcon: Icon(icon, color: const Color(0xFF6B7280), size: 20),
+              hintStyle: AppStyles.regular13(
+                context,
+              ).copyWith(color: const Color(0xFF9CA3AF), fontSize: 14),
+              prefixIcon: Icon(icon, color: AppColors.kThirdColor, size: 20),
               border: InputBorder.none,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 16,
-                vertical: 14,
+                vertical: 11,
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(
+                  color: AppColors.kSecondaryColor,
+                  width: 1.2,
+                ),
               ),
             ),
           ),

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:image2vid/core/utils/app_colors.dart';
+import 'package:image2vid/core/utils/app_styles.dart';
 import 'package:image2vid/features/auth/presentation/widgets/custom_form_button.dart';
 import 'package:image2vid/features/auth/presentation/widgets/custom_password_field.dart';
 import 'package:image2vid/features/auth/presentation/widgets/custom_text_field.dart';
+import 'package:image2vid/features/auth/presentation/widgets/dont_have_account_widget.dart';
+import 'package:image2vid/features/auth/presentation/widgets/form_container.dart';
 
 class LoginFormCard extends StatefulWidget {
   const LoginFormCard({super.key});
@@ -22,48 +26,28 @@ class _LoginFormCardState extends State<LoginFormCard> {
   }
 
   void _handleLogin() {
-    // TODO: Trigger cubit here with _emailController.text and _passwordController.text
+    //handle cubit trigger
   }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final horizontalPadding = screenWidth > 600 ? 24.0 : 16.0;
-    final cardPadding = screenWidth > 600 ? 32.0 : 24.0;
 
-    return Container(
-      width: double.infinity,
-      constraints: BoxConstraints(
-        maxWidth: screenWidth > 600 ? 450 : double.infinity,
-      ),
-      margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
-      padding: EdgeInsets.all(cardPadding),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
+    return FormCardContainer(
+      screenWidth: screenWidth,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Welcome Back',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF1F2937),
-            ),
+          Text(
+            ' Welcome Back',
+            style: AppStyles.bold17(
+              context,
+            ).copyWith(color: AppColors.kPrimaryColor),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 18),
           CustomTextField(
-            label: 'Email',
+            label: ' Email',
             placeholder: 'Enter your email',
             controller: _emailController,
             icon: Icons.email_outlined,
@@ -71,7 +55,7 @@ class _LoginFormCardState extends State<LoginFormCard> {
           ),
           const SizedBox(height: 16),
           CustomPasswordField(
-            label: 'Password',
+            label: ' Password',
             placeholder: 'Enter your password',
             controller: _passwordController,
             icon: Icons.lock_outline,
@@ -83,28 +67,7 @@ class _LoginFormCardState extends State<LoginFormCard> {
             onPressed: _handleLogin,
           ),
           const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "Don't have an account yet? ",
-                style: TextStyle(color: Color(0xFF6B7280), fontSize: 14),
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Navigate to sign up
-                },
-                child: const Text(
-                  'Sign up',
-                  style: TextStyle(
-                    color: Color(0xFF2563EB),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          const DontHaveAccountWidget(),
         ],
       ),
     );

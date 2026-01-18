@@ -14,7 +14,7 @@ double responsiveFontSize(BuildContext context, {required double fontSize}) {
 double _getResponsiveScaleFactor(BuildContext context) {
   final double screenWidth = MediaQuery.of(context).size.width;
   if (screenWidth < 600) {
-    return screenWidth / 369;
+    return screenWidth / 315;
   } else if (screenWidth < 900) {
     return screenWidth / 768;
   } else {
